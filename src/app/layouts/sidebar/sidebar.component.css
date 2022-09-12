@@ -1,0 +1,13 @@
+li>a{
+    text-decoration: none;
+}
+ul>li{
+    list-style-type: none;
+}
+li>a .active{
+    text-decoration: underline;
+}
+
+ul.lists {
+    padding: 0 20px 0 10px;
+}

@@ -1,1 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
+.main-layout {
+    width: 100%;
+    float: left;
+    /* display: flex; */
+
+}
+.side-items {
+    width: 15%;
+    float: left;
+}
+.main {
+    width: 85%;
+    float: left;
+}
+.footer{
+    padding: 20px;
+    position: fixed;
+    bottom: 0;
+}
