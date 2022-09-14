@@ -1,1 +1,145 @@
-<p>customer works!</p>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First Name</th>
+      <th scope="col">Last Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Deparment</th>
+      <td>Action</td>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of customers">
+      <th class="id_row"><a (click)="view(data._id)">{{data._id}}</a> </th>
+      <td>{{data.firstName}}</td>
+      <td>{{data.lastName}}</td>
+      <td>{{data.email}}</td>
+      <td>{{data.department}}</td>
+      <td class="action-items">
+        <span  (click)="view(data._id)"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></span>
+       &nbsp;&nbsp; <span  (click)="deleteCustomer(data._id)"> <i class="fa fa-trash-o" aria-hidden="true"></i></span>
+
+
+
+      </td>
+
+    </tr>
+
+  </tbody>
+</table>
+<div class="container">
+  <div [hidden]="submitted">
+    <h1>Customer </h1>
+    <form (ngSubmit)="onSubmit()" #heroForm="ngForm">
+      <div class="form-group">
+
+        <label for="name">First  Name</label>
+        <input type="text" class="form-control" id="name"
+               required
+               [(ngModel)]="model.firstName" name="firstName"
+               #firstName="ngModel">
+        <div [hidden]="firstName.valid || firstName.pristine"
+             class="alert alert-danger">
+             firstName is required
+        </div>
+      </div>
+      <div class="form-group">
+
+        <label for="name">Last  Name</label>
+        <input type="text" class="form-control" id="name"
+               required
+               [(ngModel)]="model.lastName" name="lastName"
+               #lastName="ngModel">
+        <div [hidden]="lastName.valid || lastName.pristine"
+             class="alert alert-danger">
+             lastName is required
+        </div>
+      </div>
+      <div class="form-group">
+
+        <label for="name">email</label>
+        <input type="text" class="form-control" id="name"
+               required
+               [(ngModel)]="model.email" name="email"
+               #email="ngModel">
+        <div [hidden]="email.valid || email.pristine"
+             class="alert alert-danger">
+             email is required
+        </div>
+      </div>
+      <div class="form-group">
+
+        <label for="name">PhoneNumber</label>
+        <input type="text" class="form-control" id="name"
+               required
+               [(ngModel)]="model.PhoneNumber" name="PhoneNumber"
+               #PhoneNumber="ngModel">
+        <div [hidden]="PhoneNumber.valid || PhoneNumber.pristine"
+             class="alert alert-danger">
+             PhoneNumber is required
+        </div>
+      </div>
+      <div class="form-group">
+{{model.Dob}}
+        <label for="name">Dob</label>
+        <input type="date" class="form-control" id="name"
+               required
+               [(ngModel)]="model.Dob" name="Dob"
+               #Dob="ngModel">
+        <div [hidden]="Dob.valid || Dob.pristine"
+             class="alert alert-danger">
+             Dob is required
+        </div>
+      </div>
+      <div class="form-group">
+
+        <label for="name">department</label>
+        <input type="text" class="form-control" id="name"
+               required
+               [(ngModel)]="model.department" name="department"
+               #department="ngModel">
+        <div [hidden]="department.valid || department.pristine"
+             class="alert alert-danger">
+             department is required
+        </div>
+      </div>
+
+
+
+      <button type="submit" class="btn btn-success" [disabled]="!heroForm.form.valid">Submit</button>
+      <button type="button" class="btn btn-default" (click)="newHero(); heroForm.reset()">New Hero</button>
+      <i>with</i> reset
+
+      &nbsp;&nbsp;
+      <button type="button" class="btn btn-default" (click)="newHero()">New Hero</button>
+      <i>without</i> reset
+
+     <!-- NOT SHOWN IN DOCS -->
+      <div>
+        <hr>
+        Name via form.controls = {{showFormControls(heroForm)}}
+      </div>
+     <!-- - -->
+    </form>
+  </div>
+
+  <div [hidden]="!submitted">
+    <h2>You submitted the following:</h2>
+    <div class="row">
+      <div class="col-xs-3">Name</div>
+      <div class="col-xs-9  pull-left">{{ model.name }}</div>
+    </div>
+    <div class="row">
+      <div class="col-xs-3">Alter Ego</div>
+      <div class="col-xs-9 pull-left">{{ model.alterEgo }}</div>
+    </div>
+    <div class="row">
+      <div class="col-xs-3">Power</div>
+      <div class="col-xs-9 pull-left">{{ model.power }}</div>
+    </div>
+    <br>
+    <button class="btn btn-primary" (click)="submitted=false">Edit</button>
+  </div>
+</div>

@@ -1,0 +1,9 @@
+th.id_row {
+  color: blue;
+  text-decoration: underline;
+  cursor: pointer;
+}
+td.action-items {
+  color: red;
+  cursor: pointer;
+}
