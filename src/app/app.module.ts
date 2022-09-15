@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 import { CustomerComponent } from './components/customer/customer.component';
 import { LoansComponent } from './components/loans/loans.component';
 import { PaymentsComponent } from './components/payments/payments.component';
@@ -18,6 +18,8 @@ import { SidebarComponent } from './layouts/sidebar/sidebar.component';
 import { DashaboardComponent } from './components/dashaboard/dashaboard.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+import { NgbModule} from "@ng-bootstrap/ng-bootstrap"
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +42,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    NgbModule
+    NgbModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
