@@ -84,11 +84,9 @@
       <div class="form-group">
 {{model.Dob}}
         <label for="name">Dob</label>
-        <!-- <dp-date-picker placeholder="M/d/yyyy" (keypress)="$event.preventDefault()" [(ngModel)]="model.dob" #dob="ngModel" name ="dob" [ngClass]="{ 'is-invalid': BankForm.submitted && effectFrom.invalid }" required theme="dp-material" [config]="datePickerConfig" required="true"></dp-date-picker> -->
-        <div [hidden]="Dob.valid || Dob.pristine"
-             class="alert alert-danger">
-             Dob is required
-        </div>
+        <input type="date" [(ngModel)]="model.dob" name="dob"
+        #dob="ngModel">
+
       </div>
       <div class="form-group">
 

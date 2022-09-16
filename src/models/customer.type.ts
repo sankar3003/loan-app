@@ -3,6 +3,6 @@ export interface Customer {
     lastName:string;
     email:string;
     PhoneNumber:number;
-    dob:string;
+    dob:Date;
     department:string
 }

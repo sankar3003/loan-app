@@ -1,7 +1,7 @@
 import { DatePipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/services/api.service';
-
+import { Customer } from 'src/models/customer.type';
 @Component({
   selector: 'app-customer',
   templateUrl: './customer.component.html',
@@ -11,14 +11,16 @@ export class CustomerComponent implements OnInit {
   customers: any=[];
   customerDetails: any;
 public _id:any
-  setDob: string | null;
+  // setDob: string | null;
   datePipe: DatePipe;
   constructor(private apiservice:ApiService) {
     this.datePipe = new DatePipe("");
-    this.setDob = this.datePipe.transform(this.model.dob, 'dd/MM/yyyy');
-    this.model.dob = this.setDob;
-   }
 
+   }
+ 
+   datePickerConfig = {
+    format: 'DD'
+  };
 model:any={
 
 }
@@ -104,8 +106,10 @@ this.apiservice.getCustomers().subscribe(res=>{
     this.apiservice.delCustomers(id).subscribe(res=>{
       console.log("res" , res);
       if(res){
+        this.getCustomers()
         this.customerDetails = res.results;
         alert("deleted")
+       
       }else{
         this.customerDetails={}
       }

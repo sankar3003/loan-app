@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { CustomerComponent } from './components/customer/customer.component';
+
 import { LoansComponent } from './components/loans/loans.component';
 import { PaymentsComponent } from './components/payments/payments.component';
 import { InvoicesComponent } from './components/invoices/invoices.component';
@@ -20,6 +20,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { NgbModule} from "@ng-bootstrap/ng-bootstrap"
+import { CustomerComponent } from './components/customer/customer.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,6 +44,7 @@ import { NgbModule} from "@ng-bootstrap/ng-bootstrap"
     ReactiveFormsModule,
     HttpClientModule,
     NgbModule,
+ 
 
   ],
   providers: [],
