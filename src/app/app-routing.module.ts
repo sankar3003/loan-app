@@ -6,6 +6,7 @@ import { DashaboardComponent } from './components/dashaboard/dashaboard.componen
 import { InvoicesComponent } from './components/invoices/invoices.component';
 import { LoansComponent } from './components/loans/loans.component';
 import { PaymentsComponent } from './components/payments/payments.component';
+import { RegisterComponent } from './components/register/register.component';
 import { SettingsComponent } from './components/settings/settings.component';
 import { UsersComponent } from './components/users/users.component';
 
@@ -42,7 +43,15 @@ const routes: Routes = [
     path:"audit-logs",
     component:AuditLogsComponent
   },
-
+  {
+    path:"register",
+    component:RegisterComponent
+  },
+{
+path:"",
+redirectTo:"register",
+pathMatch:"full"
+}
 ];
 
 @NgModule({
